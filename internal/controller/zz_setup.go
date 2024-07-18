@@ -9,7 +9,7 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	resource "github.com/upbound/provider-oci/internal/controller/null/resource"
+	genericartifact "github.com/upbound/provider-oci/internal/controller/artifacts/genericartifact"
 	providerconfig "github.com/upbound/provider-oci/internal/controller/providerconfig"
 )
 
@@ -17,7 +17,7 @@ import (
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		resource.Setup,
+		genericartifact.Setup,
 		providerconfig.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
