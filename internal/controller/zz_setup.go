@@ -10,6 +10,7 @@ import (
 	"github.com/crossplane/upjet/pkg/controller"
 
 	genericartifact "github.com/upbound/provider-oci/internal/controller/artifacts/genericartifact"
+	compartment "github.com/upbound/provider-oci/internal/controller/identity/compartment"
 	providerconfig "github.com/upbound/provider-oci/internal/controller/providerconfig"
 )
 
@@ -18,6 +19,7 @@ import (
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		genericartifact.Setup,
+		compartment.Setup,
 		providerconfig.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {

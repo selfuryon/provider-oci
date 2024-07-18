@@ -11,6 +11,7 @@ import "github.com/crossplane/upjet/pkg/config"
 var ExternalNameConfigs = map[string]config.ExternalName{
 	// Import requires using a randomly generated ID from provider: nl-2e21sda
 	"oci_artifacts_generic_artifact": config.IdentifierFromProvider,
+	"oci_identity_compartment":       config.IdentifierFromProvider,
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the

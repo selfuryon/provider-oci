@@ -11,6 +11,7 @@ import (
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
 	"github.com/upbound/provider-oci/config/artifact"
+	"github.com/upbound/provider-oci/config/identity"
 )
 
 const (
@@ -37,6 +38,7 @@ func GetProvider() *ujconfig.Provider {
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
 		artifact.Configure,
+		identity.Configure,
 	} {
 		configure(pc)
 	}
