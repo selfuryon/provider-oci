@@ -12,7 +12,7 @@ TERRAFORM_VERSION_VALID := $(shell [ "$(TERRAFORM_VERSION)" = "`printf "$(TERRAF
 
 export TERRAFORM_PROVIDER_SOURCE ?= oracle/oci
 export TERRAFORM_PROVIDER_REPO ?= https://github.com/oracle/terraform-provider-oci
-export TERRAFORM_PROVIDER_VERSION ?= 6.3.0
+export TERRAFORM_PROVIDER_VERSION ?= 6.6.0
 export TERRAFORM_DOCS_PATH ?= website/docs/r
 
 
